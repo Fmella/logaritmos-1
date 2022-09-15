@@ -5,7 +5,7 @@ import java.util.Random;
 
 public final class Utils {
 
-    public String random_string(int n) {
+    public static String random_string(int n) {
         Random random = new Random();
 
         String randomString = random.ints(n, 97, 123)
@@ -15,14 +15,14 @@ public final class Utils {
         return randomString;
     }
 
-    public long time_fun(Function fun, String str1, String str2) {
+    public static long time_fun(Function fun, String str1, String str2) {
         long start = System.currentTimeMillis();
         fun.call(str1, str2);
         long end = System.currentTimeMillis();
         return end - start;
     }
 
-    public double promedio(int cantidad, int longitud, Function fun) {
+    public static double promedio(int cantidad, int longitud, Function fun) {
         double total = 0;
         for (int i = 0; i < cantidad; i++) {
             final String str1 = random_string(longitud);
