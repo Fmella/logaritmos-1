@@ -8,11 +8,9 @@ public final class Utils {
     public static String random_string(int n) {
         Random random = new Random();
 
-        String randomString = random.ints(n, 97, 123)
+        return random.ints(n, 97, 123)
         .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
         .toString();
-
-        return randomString;
     }
 
     public static long time_fun(Function fun, String str1, String str2) {

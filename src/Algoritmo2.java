@@ -2,7 +2,7 @@ import utils.Function;
 
 public class Algoritmo2 implements Function{
     @Override
-    public void call(String str1, String str2) {
+    public int call(String str1, String str2) {
 
         // inicializacion de valores
         final int len = str1.length();
@@ -45,5 +45,6 @@ public class Algoritmo2 implements Function{
             i = j;
             i++; j++;
         }
+        return row[len];
     }
 }

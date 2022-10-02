@@ -2,10 +2,10 @@ import utils.Function;
 
 public class Algoritmo3 implements Function{
 
+    public int len_b = 512;
     @Override
-    public void call(String str1, String str2) {
+    public int call(String str1, String str2) {
         // Inicializamos las variables importantes
-        int len_b = 2048;
         int longitud = str1.length();
         int row_matriz = longitud/(len_b-1);
         if(longitud %(len_b-1) != 0) row_matriz++;
@@ -80,9 +80,8 @@ public class Algoritmo3 implements Function{
                 // print_matriz(submatriz, len_b);
             }
         }
-
         // Entregamos el resultado, dependiendo del largo del string para poder entregar la celda correspondiente
-        // if(longitud % (len_b-1) == 0) System.out.println(matriz[row_matriz-1][row_matriz-1][len_b-1][len_b-1]);
-        // else System.out.println(matriz[row_matriz-1][row_matriz-1][longitud%(len_b-1)][longitud%(len_b-1)]);
+        if(longitud % (len_b-1) == 0) return matriz[row_matriz-1][row_matriz-1][len_b-1][len_b-1];
+        else return matriz[row_matriz-1][row_matriz-1][longitud%(len_b-1)][longitud%(len_b-1)];
     }
 }

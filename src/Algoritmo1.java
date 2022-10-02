@@ -3,7 +3,7 @@ import utils.Function;
 public class Algoritmo1 implements Function{
 
     @Override
-    public void call(String str1, String str2) {
+    public int call(String str1, String str2) {
 
         final int longitud = str1.length();
 
@@ -24,14 +24,15 @@ public class Algoritmo1 implements Function{
                         int N = matriz[i][j-1];
                         int O = matriz[i-1][j];
 
-                        int min = (NO < N) ? NO: N;
-                        min = (O < min) ? O : min;
+                        int min = Math.min(NO, N);
+                        min = Math.min(O, min);
 
                         matriz[i][j] = min + 1;
                     }
                 }
             }
         }
+        return matriz[longitud][longitud];
     }
     
 }
